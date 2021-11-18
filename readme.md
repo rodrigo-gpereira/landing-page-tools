@@ -1,4 +1,4 @@
-#Landing Page Tools
+# Landing Page Tools
 
 Este plugin é um guia de estudo para quem quer aprender a desenvolver plugins para WordPress
 
