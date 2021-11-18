@@ -1,0 +1,43 @@
+{
+  "name": "landing-page-tools",
+  "version": "1.0.0",
+  "description": "Landing Page Tools",
+  "main": "index.php",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --prod && gulp compress"
+  },
+  "author": "Rodrigo Gomes",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.7.4",
+    "autoprefixer": "^9.7.2",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "css-loader": "^6.5.1",
+    "del": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-replace-task": "^0.11.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-wp-pot": "^2.5.0",
+    "gulp-zip": "^5.0.1",
+    "jquery": "^3.4.1",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^15.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "sweetalert2": "^10.10.1"
+  }
+}

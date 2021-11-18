@@ -1,0 +1,23 @@
+{
+    "name": "rodrigo/landing-page-tools",
+    "description": "Landing Page Tools",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Rodrigo Gomes",
+            "email": "rodrigo@infografic.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "LPT\\Core\\":"core/",
+            "LPT\\Includes\\":"includes/"
+        }
+    },
+    "require-dev": {
+        "paulthewalton/acf-stubs": "dev-master",
+        "giacocorsiglia/wordpress-stubs": "dev-master"
+    }
+}
