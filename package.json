@@ -1,6 +1,6 @@
 {
   "name": "landing-page-tools",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Landing Page Tools",
   "main": "index.php",
   "scripts": {

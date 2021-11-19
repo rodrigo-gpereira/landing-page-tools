@@ -57,16 +57,22 @@ export const styles = () => {
       .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
       .pipe(gulpif(PRODUCTION, cleanCss({ compatibility: "ie8" })))
       .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-      .pipe(dest("./dist/css")),
-    src("src/scss/style.scss")
-      .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-      .pipe(sass().on("error", sass.logError))
-      .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
-      .pipe(gulpif(PRODUCTION, cleanCss({ compatibility: "ie8" })))
-      .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
       .pipe(dest("./dist/css"))
   );
 };
+
+//ADMIN STYLE
+export const adminStyle = () =>{
+	return(
+		src("src/scss/style.scss")
+			.pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+			.pipe(sass().on("error", sass.logError))
+			.pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
+			.pipe(gulpif(PRODUCTION, cleanCss({ compatibility: "ie8" })))
+			.pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+			.pipe(dest("./dist/css"))
+	)
+}
 
 //Image
 export const images = () => {
@@ -191,13 +197,13 @@ export const compress = () => {
 // Build e Dev Run
 export const dev = series(
   clean,
-  parallel(styles, images, copy, vendorCopy, scripts, replace_php),
+  parallel(styles, images, copy, scripts, replace_php),
   serve,
   watching
 );
 export const build = series(
   clean,
-  parallel(styles, images, copy, vendorCopy, scripts, replace_php),
+  parallel(styles, images, copy, scripts, replace_php),
   pot
 );
 export default dev;

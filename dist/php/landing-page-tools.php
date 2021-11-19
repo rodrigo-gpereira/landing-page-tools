@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Landing Page Tools src
+ * Plugin Name:       @@PLUGIN_NAME
  * Plugin URI:        https://infografic.com.br
  * Description:       Plugin de gestão de Landing Pages.
- * Version:           0.1.0
+ * Version:           @@PLUGIN_VERSION
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            Rodrigo Gomes
