@@ -17,3 +17,34 @@
  */
 
 // Your code starts here.
+
+defined( 'ABSPATH' ) || exit;
+
+class Plugin
+{
+
+	public function activate()
+	{
+		flush_rewrite_rules();
+	}
+
+	public function deactivate()
+	{
+		flush_rewrite_rules();
+	}
+
+}
+
+if (class_exists('Plugin')){
+
+	define('LPT_PLUGIN_FILE', __FILE__);
+
+	$plugin = new Plugin();
+}
+
+
+// activation
+register_activation_hook(LPT_PLUGIN_FILE, array($plugin, 'activate'));
+
+// deactivation
+register_deactivation_hook(LPT_PLUGIN_FILE, array($plugin, 'deactivate'));
