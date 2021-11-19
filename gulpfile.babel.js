@@ -83,7 +83,7 @@ export const images = () => {
 
 //Watch
 export const watching = () => {
-  watch("src/scss/**/*.scss", series(styles, reload));
+  watch("src/scss/**/*.scss", series(styles, adminStyle, reload));
   watch("src/js/**/*.js", series(scripts, reload));
   watch("src/php/*.php", replace_php);
   watch(["**/*.php","**/*.twig","!src/php/*.php"], reload);
@@ -197,13 +197,13 @@ export const compress = () => {
 // Build e Dev Run
 export const dev = series(
   clean,
-  parallel(styles, images, copy, scripts, replace_php),
+  parallel(styles, adminStyle, images, copy, scripts, replace_php),
   serve,
   watching
 );
 export const build = series(
   clean,
-  parallel(styles, images, copy, scripts, replace_php),
+  parallel(styles, adminStyle, images, copy, scripts, replace_php),
   pot
 );
 export default dev;
