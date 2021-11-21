@@ -92,9 +92,9 @@ export const watching = () => {
 //Copy
 export const copy = () => {
   return src([
-    "src/**/*",
-    "!src/{images,js,scss}",
-    "!src/{images,js,scss}/**/*",
+  	"src/**/*",
+    "!src/{images,js,scss,php}",
+    "!src/{images,js,scss,php}/**/*",
   ]).pipe(dest("dist"));
 };
 
