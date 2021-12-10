@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-Class Autoloader
+class Autoloader
 {
 
 	private static $namespace_root = 'LPT\\';
