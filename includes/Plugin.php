@@ -1,6 +1,10 @@
 <?php
 
-namespace LPT;
+use LPT\Activate;
+use LPT\Deactivate;
+
+defined( 'ABSPATH' ) || exit;
+
 
 final class Plugin
 {
@@ -14,7 +18,10 @@ final class Plugin
 	 * The Singleton's constructor should always be private to prevent direct
 	 * construction calls with the `new` operator.
 	 */
-	protected function __construct() { }
+	protected function __construct()
+	{
+		$this->autoloader();
+	}
 
 	/**
 	 * Singletons should not be cloneable.
@@ -34,25 +41,25 @@ final class Plugin
 		return self::$_instance;
 	}
 
-	public function checkInstance()
+	public function init()
 	{
-		echo "Este é o Objeto " , spl_object_id($this) , " da classe plugin versão ", $this->getVersion() , "\n" ;
+
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getVersion(): string
+	public function activate()
 	{
-		return $this->version;
+		Activate::activate();
 	}
 
-	/**
-	 * @param string $version
-	 */
-	public function setVersion(string $version): void
+	public function deactivate()
 	{
-		$this->version = $version;
+		Deactivate::deactivate();
+	}
+
+	private function autoloader() {
+		require_once LPT_PLUGIN_PATH . '/includes/Autoloader.php';
+
+		Autoloader::exec();
 	}
 
 }

@@ -16,15 +16,15 @@
  * @package         Landing_Page_Tools
  */
 
-// Your code starts here.
+defined( 'ABSPATH' ) || exit;
 
-//defined( 'ABSPATH' ) || exit;
+define('LPT_PLUGIN_FILE', untrailingslashit(__FILE__));
+define('LPT_PLUGIN_PATH', untrailingslashit( plugin_dir_path( LPT_PLUGIN_FILE) ));
+define('LPT_PLUGIN_URL', untrailingslashit( plugins_url( '/', LPT_PLUGIN_FILE) ));
 
-
-define('LPT_PLUGIN_FILE', __FILE__);
-
-
-
+require_once LPT_PLUGIN_PATH . '/includes/Plugin.php';
+//require_once LPT_PLUGIN_PATH . '/includes/Activate.php';
+//require_once LPT_PLUGIN_PATH . '/includes/Deactivate.php';
 
 if (class_exists('Plugin')){
 
@@ -33,26 +33,13 @@ if (class_exists('Plugin')){
 		return Plugin::getInstance();
 	}
 
-	//Instanciar 2 objetos da classe plugin
-	$plugin = LPT();
+	add_action('plugins_loaded', array(LPT(), 'init'));
 
+	// activation
+	//register_activation_hook(LPT_PLUGIN_FILE, array(LPT(), 'activate'));
 
-	$plugin_2 = LPT();
-	$plugin->setVersion("1.0.0");
-
-	$plugin->checkInstance();
-	$plugin_2->checkInstance();
-
-	if($plugin === $plugin_2){
-		echo "nós somos iguais";
-	}
-
+	// deactivation
+	//register_deactivation_hook(LPT_PLUGIN_FILE, array(LPT(), 'deactivate'));
 }
 
 
-
-/*// activation
-register_activation_hook(LPT_PLUGIN_FILE, array($plugin, 'activate'));
-
-// deactivation
-register_deactivation_hook(LPT_PLUGIN_FILE, array($plugin, 'deactivate'));*/
