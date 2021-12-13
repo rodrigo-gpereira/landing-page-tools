@@ -18,16 +18,17 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define('LPT_PLUGIN_FILE', untrailingslashit(__FILE__));
+define('LPT_PLUGIN_FILE', __FILE__);
 define('LPT_PLUGIN_PATH', untrailingslashit( plugin_dir_path( LPT_PLUGIN_FILE) ));
 define('LPT_PLUGIN_URL', untrailingslashit( plugins_url( '/', LPT_PLUGIN_FILE) ));
 
+if (file_exists(LPT_PLUGIN_PATH . '/vendor/autoload.php')) {
+	require_once LPT_PLUGIN_PATH . '/vendor/autoload.php';
+}
+
 require_once LPT_PLUGIN_PATH . '/includes/Plugin.php';
-//require_once LPT_PLUGIN_PATH . '/includes/Activate.php';
-//require_once LPT_PLUGIN_PATH . '/includes/Deactivate.php';
 
 if (class_exists('Plugin')){
-
 
 	function LPT() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 		return Plugin::getInstance();
@@ -36,10 +37,10 @@ if (class_exists('Plugin')){
 	add_action('plugins_loaded', array(LPT(), 'init'));
 
 	// activation
-	//register_activation_hook(LPT_PLUGIN_FILE, array(LPT(), 'activate'));
+	register_activation_hook(LPT_PLUGIN_FILE, array(LPT(), 'activate'));
 
 	// deactivation
-	//register_deactivation_hook(LPT_PLUGIN_FILE, array(LPT(), 'deactivate'));
+	register_deactivation_hook(LPT_PLUGIN_FILE, array(LPT(), 'deactivate'));
 }
 
 

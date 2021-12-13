@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af0a7d74423e2fb1330a70e82f55cf82",
+    "content-hash": "cd4094175b4bcdcbe14006ad32ea275a",
     "packages": [],
     "packages-dev": [
         {
             "name": "giacocorsiglia/wordpress-stubs",
-            "version": "dev-master",
+            "version": "v5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GiacoCorsiglia/wordpress-stubs.git",
@@ -27,7 +27,6 @@
                 "johnpbloch/wordpress": "5.1.1",
                 "php": "^7.1"
             },
-            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -47,22 +46,22 @@
             ],
             "support": {
                 "issues": "https://github.com/GiacoCorsiglia/wordpress-stubs/issues",
-                "source": "https://github.com/GiacoCorsiglia/wordpress-stubs/tree/v5.1.1"
+                "source": "https://github.com/GiacoCorsiglia/wordpress-stubs/tree/master"
             },
             "time": "2019-03-13T21:16:05+00:00"
         },
         {
             "name": "paulthewalton/acf-stubs",
-            "version": "dev-master",
+            "version": "5.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paulthewalton/acf-stubs.git",
-                "reference": "e26e2435d08aaf48a8e0b61788fdd2cd5dc295b9"
+                "reference": "722096c127186c41ac98395b418195d1db9cf576"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paulthewalton/acf-stubs/zipball/e26e2435d08aaf48a8e0b61788fdd2cd5dc295b9",
-                "reference": "e26e2435d08aaf48a8e0b61788fdd2cd5dc295b9",
+                "url": "https://api.github.com/repos/paulthewalton/acf-stubs/zipball/722096c127186c41ac98395b418195d1db9cf576",
+                "reference": "722096c127186c41ac98395b418195d1db9cf576",
                 "shasum": ""
             },
             "require-dev": {
@@ -72,7 +71,6 @@
                 "php": "^7.1",
                 "wpackagist-plugin/advanced-custom-fields": "5.8.7"
             },
-            "default-branch": true,
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -94,17 +92,14 @@
             ],
             "support": {
                 "issues": "https://github.com/paulthewalton/acf-stubs/issues",
-                "source": "https://github.com/paulthewalton/acf-stubs/tree/master"
+                "source": "https://github.com/paulthewalton/acf-stubs/tree/5.8.7"
             },
-            "time": "2019-12-11T18:53:00+00:00"
+            "time": "2019-12-04T19:26:53+00:00"
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "paulthewalton/acf-stubs": 20,
-        "giacocorsiglia/wordpress-stubs": 20
-    },
+    "minimum-stability": "stable",
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

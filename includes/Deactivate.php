@@ -1,6 +1,6 @@
 <?php
 
-namespace LPT;
+namespace LPT\Includes;
 
 defined( 'ABSPATH' ) || exit;
 

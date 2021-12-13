@@ -1,23 +1,23 @@
 {
     "name": "rodrigo/landing-page-tools",
-    "description": "Landing Page Tools",
+    "description": "Plugin Landing Page Tools",
     "type": "project",
+    "require-dev": {
+        "giacocorsiglia/wordpress-stubs": "^5.1",
+        "paulthewalton/acf-stubs": "^5.8"
+    },
     "license": "GPL",
     "authors": [
         {
             "name": "Rodrigo Gomes",
-            "email": "rodrigo@infografic.com.br"
+            "email": "digoartmusic@outlook.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
-        "psr-4": {
-            "LPT\\Core\\":"core/",
-            "LPT\\Includes\\":"includes/"
-        }
+      "psr-4": {
+        "LPT\\Includes\\":"includes/"
+      }
     },
-    "require-dev": {
-        "paulthewalton/acf-stubs": "dev-master",
-        "giacocorsiglia/wordpress-stubs": "dev-master"
-    }
+    "minimum-stability": "stable",
+    "require": {}
 }
